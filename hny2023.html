@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Years 2023</title>
+</head>
+
+<style>
+* body{
+  margin:0;
+  padding:0;
+}
+
+.fireworksDiv{
+  position: relative;
+  background-color: rgba(0,0,0,1);
+  width: 100%;
+  height: 99vh;
+  z-index:9;
+}
+
+.text{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  height:100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.text h5 {
+  text-align:center;
+  font-size:3rem;
+  color:white;
+  text-transform:uppercase;
+  text-shadow: 3px -4px 4px cadetblue;
+}
+
+.text a {
+  text-align:center;
+  font-size:1rem;
+  color:white;
+  text-transform:uppercase;
+  text-shadow: 3px -4px 4px cadetblue;
+}
+
+</style>
+
+<body>
+      <div class="fireworksDiv"></div>
+
+      <div class="text">
+          <h5> Happy New Years <br> 2023<br><br> Henri</h5>
+      </div>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
+<script>
+    const fireDiv = document.querySelector('.fireworksDiv');
+    const fireworks = new Fireworks(fireDiv,{
+      delay:{min:10, max:15},
+      trace: 5,
+      speed:0.5,
+      particles: 100,
+      sound:{
+        enable:true,
+        files:['https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'],
+        volume: {min: 1, max: 2}
+      }
+    })
+
+    fireworks.start();
+
+    var context = new AudioContext();
+
+    // window.onload = () => {
+    //   context.resume().then(() => {
+    //     console.log('Playback resumed successfully');
+    //   });
+    // }
+
+      document.addEventListener('click', () => {
+          context.resume().then(() => {
+            console.log('Playback resumed successfully');
+          });
+        })
+
+    // setTimeout(function(){
+    //   fireworks.stop();
+    // },10000)
+</script>
+
+</body>
+</html>
